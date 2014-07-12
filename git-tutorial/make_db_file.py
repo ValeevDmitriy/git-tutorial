@@ -10,12 +10,13 @@ def storeDbase(db, dbfilename = dbfilename):
         for (name, value) in db[key].items():
             print(name + RECSEP + repr(value), file=dbfile)
         print(ENDREC, file=dbfile)
+    print(ENDDB, file=dbfile)
     dbfile.close()
 
 def loadDbase(dbfilename = dbfilename):
-    dbfile = open(dbfilename, 'r')
+    dbfile = open(dbfilename)
     import sys
-    sys.stdint = dbfile
+    sys.stdin = dbfile
     db = {}
     key = input()
     while key != ENDDB:
