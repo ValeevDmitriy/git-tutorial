@@ -7,3 +7,4 @@ for filename in glob.glob('*.pkl'):
     
 suefile = open('sue.pkl', 'rb')
 print(pickle.load(suefile)['name'])
+a=3
