@@ -10,6 +10,9 @@ class Person:
     
     def giveRaise(self, percent):
         self.pay *= (1.0 + percent)
+        
+    def __str__(self):
+        return '{0} => {1}'.format(self.__class__.__name__, self.name)
     
     
 
